@@ -31,14 +31,16 @@ public class BlackJack {
 			String rank = ranks[deck[i] % 13];
 			System.out.println(rank + " of " + suit);
 		}
-		// Ask hit or stay and loop
+				// Ask hit or stay and loop
 		System.out.print("Hit (Y) or Stay? (Any other key)");
 		looper = Character.toUpperCase(input.next().charAt(0));
-		input.close();
 		// Hit
-		if (looper == 'Y') {
+		while (looper == 'Y') {
 			hit('Y');
+			System.out.print("Hit again? (y)");
+			looper = Character.toUpperCase(input.next().charAt(0));
 		}
+		input.close();
 	}
 	public static void hit(char Y) {
 
